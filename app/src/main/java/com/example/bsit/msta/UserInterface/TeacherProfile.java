@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.bsit.msta.Fragments.Teacher.fragmentTeacherHome;
+import com.example.bsit.msta.Fragments.Teacher.fragmentTeacherNotification;
+import com.example.bsit.msta.Fragments.Teacher.fragmentTeacherStudentList;
 import com.example.bsit.msta.R;
 
 import java.util.ArrayList;
@@ -46,8 +48,8 @@ public class TeacherProfile extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new fragmentTeacherHome(), "HOME");
-        adapter.addFragment(new fragmentTeacherHome(), "STUDENT LIST");
-        adapter.addFragment(new fragmentTeacherHome(), "NOTIFICATION");
+        adapter.addFragment(new fragmentTeacherStudentList(), "STUDENT LIST");
+        adapter.addFragment(new fragmentTeacherNotification(), "NOTIFICATION");
         viewPager.setAdapter(adapter);
     }
 
@@ -69,7 +71,7 @@ public class TeacherProfile extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFragment(fragmentTeacherHome fragment, String title) {
+        public void addFragment(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
@@ -79,4 +81,8 @@ public class TeacherProfile extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
+
+
+
 }
