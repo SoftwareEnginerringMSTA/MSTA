@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">MSTA</string>
+    <string name="Home">Home</string>
+    <string name="Notification">Notification</string>
+    <string name="Calendar">Calendar</string>
+    <string name="StudentList">Student List</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_id">Student ID</string>
+    <string name="hint_year_level">Year Level</string>
+    <string name="hint_advisor_name">Advisor Name</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+
+
 </resources>
