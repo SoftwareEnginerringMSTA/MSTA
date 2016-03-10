@@ -50,9 +50,9 @@ public class StudentProfile extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fragmentStudentHome(), "ONE");
-        adapter.addFragment(new fragmentStudentCalendar(), "TWO");
-        adapter.addFragment(new fragmentStudentNotification(), "THREE");
+        adapter.addFragment(new fragmentStudentHome(), "HOME");
+        adapter.addFragment(new fragmentStudentCalendar(), "CALENDAR");
+        adapter.addFragment(new fragmentStudentNotification(), "NOTIFICATION");
         viewPager.setAdapter(adapter);
     }
 

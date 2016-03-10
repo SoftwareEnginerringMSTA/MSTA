@@ -17,6 +17,7 @@
         </activity>
         <activity android:name="com.example.bsit.msta.UserInterface.SignUp"></activity>
         <activity android:name=".UserInterface.StudentProfile"></activity>
+        <activity android:name=".UserInterface.TeacherProfile"></activity>
 
     </application>
 

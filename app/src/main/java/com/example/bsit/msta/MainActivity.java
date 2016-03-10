@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.bsit.msta.UserInterface.SignUp;
-import com.example.bsit.msta.UserInterface.StudentProfile;
+import com.example.bsit.msta.UserInterface.TeacherProfile;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.btnLogin:
-                intent = new Intent(this, StudentProfile.class);
+                intent = new Intent(this, TeacherProfile.class);
                 startActivity(intent);break;
             case R.id.btnSignup:
                 intent = new Intent(this, SignUp.class);
