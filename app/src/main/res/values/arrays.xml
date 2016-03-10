@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="Teachers">
+        <item>Petralba</item>
+        <item>Abello</item>
+        <item>Salares</item>
+        <item>Tejana</item>
+        <item>Bandalan</item>
+    </string-array>
+
+
+
+
+
+
+    </resources>

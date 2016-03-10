@@ -7,18 +7,29 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/MyMaterialTheme">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.bsit.msta.UserInterface.SignUp"></activity>
-        <activity android:name=".UserInterface.StudentProfile"></activity>
-        <activity android:name=".UserInterface.TeacherProfile"></activity>
+
+        <activity android:name="com.example.bsit.msta.UserInterface.SignUp"
+            android:theme="@style/MyMaterialTheme">
+        </activity>
+        <activity android:name=".UserInterface.StudentProfile"
+            android:theme="@style/MyMaterialTheme"></activity>
+        <activity android:name=".UserInterface.TeacherProfile"
+            android:theme="@style/MyMaterialTheme"></activity>
 
     </application>
+
+
+
+
+
+
+
 
 </manifest>
