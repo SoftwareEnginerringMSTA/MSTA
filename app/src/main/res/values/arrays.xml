@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <string-array name="Teachers">
         <item>Petralba</item>
         <item>Abello</item>
         <item>Salares</item>
         <item>Tejana</item>
         <item>Bandalan</item>
+    </string-array>
+
+    <string-array name="Course">
+        <item>BSIT</item>
+        <item>BSCS</item>
+        <item>BSIS</item>
+        <item>ACT</item>
+    </string-array>
+
+
+    <string-array name="YearLevel">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
 

@@ -16,6 +16,6 @@
     <string name="err_msg_password">Enter the password</string>
     <string name="err_msg_student_id">Enter your Student ID</string>
     <string name="err_msg_year_level">Enter your year level</string>
-
+    <string name="action_menu">Logout</string>
 
 </resources>

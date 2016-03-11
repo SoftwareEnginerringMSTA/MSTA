@@ -8,19 +8,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainInterface.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.bsit.msta.UserInterface.SignUp"
-            android:theme="@style/MyMaterialTheme">
+        <activity android:name="com.example.bsit.msta.MainInterface.SignUp"
+            android:theme="@style/MyMaterialTheme"
+            android:label="REGISTER">
         </activity>
-        <activity android:name=".UserInterface.StudentProfile"
+        <activity android:name=".MainInterface.StudentProfile"
             android:theme="@style/MyMaterialTheme"></activity>
-        <activity android:name=".UserInterface.TeacherProfile"
+        <activity android:name=".MainInterface.TeacherProfile"
             android:theme="@style/MyMaterialTheme"></activity>
 
     </application>
