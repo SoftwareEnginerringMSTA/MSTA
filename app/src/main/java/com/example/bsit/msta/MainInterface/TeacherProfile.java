@@ -1,15 +1,20 @@
 package com.example.bsit.msta.MainInterface;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import com.example.bsit.msta.Fragments.Teacher.fragmentTeacherHome;
 import com.example.bsit.msta.Fragments.Teacher.fragmentTeacherNotification;
@@ -27,6 +32,9 @@ public class TeacherProfile extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    SimpleCursorAdapter mAdapter;
+    ListView mListView;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,11 @@ public class TeacherProfile extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+
+
+
+
     }
 
 
@@ -102,7 +115,13 @@ public class TeacherProfile extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_menu) {
-            return true;
+            SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.KEY_MYPREFERENCES, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.commit();
+
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

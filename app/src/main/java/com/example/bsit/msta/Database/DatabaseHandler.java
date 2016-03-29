@@ -20,28 +20,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "studentList";
     private static final String TABLE_STUDENTS = "students";
 
-    private static final String KEY_STUDENT_ID ="student_id";
-    private static final String KEY_PASSWORD="password";
-    private static final String KEY_STUDENT_NAME="student_name";
-    private static final String KEY_COURSE="course";
-    private static final String KEY_YEAR_LEVEL="year_level";
-    private static final String KEY_ADVISOR="advisor";
-
-
+    public static final String KEY_STUDENT_ID ="student_id";
+    public static final String KEY_PASSWORD="password";
+    public static final String KEY_STUDENT_NAME="student_name";
+    public static final String KEY_COURSE="course";
+    public static final String KEY_YEAR_LEVEL="year_level";
+    public static final String KEY_ADVISOR="advisor";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_STUDENT_TABLE = "CREATE TABLE " + TABLE_STUDENTS + "("
-                + KEY_STUDENT_ID + " INTEGER PRIMARY KEY,"+ KEY_STUDENT_NAME + " TEXT,"
+                + KEY_STUDENT_ID + " TEXT PRIMARY KEY,"+ KEY_STUDENT_NAME + " TEXT,"
                 + KEY_COURSE + " TEXT,"+ KEY_YEAR_LEVEL + " TEXT,"+ KEY_PASSWORD + " TEXT," +
                  KEY_ADVISOR + " TEXT" + ")";
         db.execSQL(CREATE_STUDENT_TABLE);
 
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -66,13 +66,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
+
+
     // Getting single student
     public Students getStudents(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_STUDENTS, new String[] { KEY_STUDENT_ID,
-                        KEY_STUDENT_NAME, KEY_COURSE,KEY_YEAR_LEVEL,KEY_ADVISOR }, KEY_STUDENT_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+        Cursor cursor = db.query(TABLE_STUDENTS, new String[]{KEY_STUDENT_ID,
+                        KEY_STUDENT_NAME, KEY_COURSE, KEY_YEAR_LEVEL, KEY_ADVISOR}, KEY_STUDENT_ID + "=?",
+                new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -90,7 +92,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + TABLE_STUDENTS;
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+            Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -109,7 +111,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return student list
         return studentList;
     }
-
     // Getting student Count
     public int getStudentCount() {
         String countQuery = "SELECT  * FROM " + TABLE_STUDENTS;

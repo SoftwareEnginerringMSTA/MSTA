@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         init();
 
-
     }
 
     public void init(){
@@ -57,9 +56,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editor.putString(KEY_PASS, pass);
                 editor.apply();
 
+//                if (user.contentEquals("")) {
+//                    mUser.setError("Invalid Credentials");
+//                }
+//                else if(pass.contentEquals("")) {
+//                    mPass.setError("Invalid Credentials");
+//                }
+//                else if(!user.contentEquals("2013007248") && !pass.contentEquals("12345")){
+//                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!user.contentEquals("12345") && !pass.contentEquals("67890")){
+//                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                else
                 if(user.contentEquals("2013007248") && pass.contentEquals("12345")){
                     intent = new Intent(this, StudentProfile.class);
-                    startActivity(intent);
+                startActivity(intent);
                 }
                 else if(user.contentEquals("12345") && pass.contentEquals("67890")){
                     intent = new Intent(this, TeacherProfile.class);

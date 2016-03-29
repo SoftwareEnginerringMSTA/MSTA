@@ -112,14 +112,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener,Ad
             yearLevel = mYearLevel.getSelectedItem().toString();
 
             DatabaseHandler db = new DatabaseHandler(this);
+            try {
+                db.addStudent(new Students(name, password, id, course, advisor, yearLevel));
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
 
-               try {
-                   db.addStudent(new Students(name, password, id, course, advisor, yearLevel));
-               }catch (Exception ex){
-                   Toast.makeText(getApplicationContext(), "Error Student ID has been taken", Toast.LENGTH_SHORT);
-               }
-
-            Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this,StudentProfile.class);
             startActivity(intent);
