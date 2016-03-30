@@ -66,10 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent);
                 }
                 else if(user.isEmpty()){
-                    mUser.setError("Invalid Credentials");
+                    mUser.setError("Must not be empty");
                 }
                 else if(pass.isEmpty()){
-                    mPass.setError("Invalid Credentials");
+                    mPass.setError("Must not be empty");
                 }
                 else if(!user.contentEquals("2013007248") && !pass.contentEquals("12345")){
                     Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
