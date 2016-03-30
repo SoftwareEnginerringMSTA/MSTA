@@ -10,18 +10,21 @@ public class Students  {
     private String course;
     private String advisor;
     private String yearLevel;
+    private int    mImageId;
 
 
-//    public Students(String name, String password, String id, String string, String cursorString, String s) {
-//        this.name = name;
-//        this.password = password;
-//        this.id = id;
-//        this.course = course;
-//        this.advisor = advisor;
-//        this.yearLevel = yearLevel;
-//
-//    }
+    public Students( String name, String course, String password ,int mImageId) {
+        this.mImageId = mImageId;
+        this.name = name;
+        this.password = password;
+        this.course = course;
+    }
 
+    public Students(String name, String course, int mImageId) {
+        this.name = name;
+        this.mImageId = mImageId;
+        this.course = course;
+    }
 
     public Students(String name, String password, String id, String course, String advisor, String yearLevel) {
         this.name = name;
@@ -43,6 +46,17 @@ public class Students  {
     public String getName() {
         return name;
     }
+
+
+    public int getmImageId() {
+        return mImageId;
+    }
+
+    public void setmImageId(int mImageId) {
+        this.mImageId = mImageId;
+    }
+
+
 
     public void setName(String name) {
         this.name = name;
@@ -87,5 +101,27 @@ public class Students  {
     public void setYearLevel(String yearLevel) {
         this.yearLevel = yearLevel;
     }
+
+
+
+    public Students setImageId(int imageId) {
+        mImageId = imageId;
+        return this;
+    }
+    public Students setStudentListCourse(String mCourse) {
+        course = mCourse;
+        return this;
+    }
+    public Students setStudentListName(String mName) {
+        name = mName;
+        return this;
+    }
+
+    public Students setSchedule(String sched) {
+        password = sched;
+        return this;
+    }
+
+
 
 }

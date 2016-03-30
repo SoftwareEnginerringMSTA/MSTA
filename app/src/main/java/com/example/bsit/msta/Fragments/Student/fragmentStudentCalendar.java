@@ -105,8 +105,9 @@ public class fragmentStudentCalendar extends Fragment implements OnDateSelectedL
     private String getSelectedDatesString() {
         CalendarDay date = widget.getSelectedDate();
         if (date == null) {
-            return "No Selection";
+            return "  ";
         }
+
         return FORMATTER.format(date.getDate());
     }
 

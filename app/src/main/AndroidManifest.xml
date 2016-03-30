@@ -24,6 +24,9 @@
         <activity android:name=".MainInterface.TeacherProfile"
             android:theme="@style/MyMaterialTheme"></activity>
 
+        <activity android:name=".MainInterface.StudentDetails"
+            android:theme="@style/MyMaterialTheme"></activity>
+
     </application>
 
 
