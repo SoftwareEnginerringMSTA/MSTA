@@ -122,8 +122,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener,Ad
 
             Intent intent = new Intent(this,StudentProfile.class);
             startActivity(intent);
-
-
         }
 
     }

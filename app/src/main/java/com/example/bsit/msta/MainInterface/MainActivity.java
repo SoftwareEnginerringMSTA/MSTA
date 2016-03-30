@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.bsit.msta.R;
 
@@ -56,20 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editor.putString(KEY_PASS, pass);
                 editor.apply();
 
-//                if (user.contentEquals("")) {
-//                    mUser.setError("Invalid Credentials");
-//                }
-//                else if(pass.contentEquals("")) {
-//                    mPass.setError("Invalid Credentials");
-//                }
-//                else if(!user.contentEquals("2013007248") && !pass.contentEquals("12345")){
-//                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(!user.contentEquals("12345") && !pass.contentEquals("67890")){
-//                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                else
                 if(user.contentEquals("2013007248") && pass.contentEquals("12345")){
                     intent = new Intent(this, StudentProfile.class);
                 startActivity(intent);
@@ -78,12 +65,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent = new Intent(this, TeacherProfile.class);
                     startActivity(intent);
                 }
+                else if(user.isEmpty()){
+                    mUser.setError("Invalid Credentials");
+                }
+                else if(pass.isEmpty()){
+                    mPass.setError("Invalid Credentials");
+                }
+                else if(!user.contentEquals("2013007248") && !pass.contentEquals("12345")){
+                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+                }
+                else if(!user.contentEquals("12345") && !pass.contentEquals("67890")){
+                    Toast.makeText(MainActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.btnSignup:
                 intent = new Intent(this, SignUp.class);
                 startActivity(intent);break;
         }
-
-
     }
 }
